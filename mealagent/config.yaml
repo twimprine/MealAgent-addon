@@ -1,0 +1,30 @@
+# Public App manifest. Contains NO code and NO household data - just the App descriptor and a
+# reference to the public GHCR image (built from the private source repo twimprine/MealAgent by
+# its CI). HA clones this public repo and pulls that image.
+name: MealAgent
+version: "0.1.0"
+slug: mealagent
+description: Plans your family's meals from a pantry photo and puts them in your calendar and shopping list.
+image: "ghcr.io/twimprine/mealagent-{arch}"
+arch:
+  - amd64
+init: false
+ingress: true
+ingress_port: 8099
+ingress_stream: true
+panel_icon: mdi:food-variant
+panel_title: MealAgent
+panel_admin: true
+homeassistant_api: true
+map:
+  - media:rw
+services:
+  - mqtt:want
+options:
+  ai_task_entity: ai_task.claude_ai_task
+  calendar_entity: calendar.meal_plan
+  todo_entity: todo.groceries
+schema:
+  ai_task_entity: 'match(^ai_task\.[a-z0-9_]+$)'
+  calendar_entity: 'match(^calendar\.[a-z0-9_]+$)'
+  todo_entity: 'match(^todo\.[a-z0-9_]+$)'
