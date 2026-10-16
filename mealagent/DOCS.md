@@ -21,6 +21,15 @@ Your setup, pantry list and a plan per week are JSON files in the App's `/data` 
 stripped of metadata such as location, and written to a temporary file or MQTT entity only while the AI Task reads them,
 then removed. If the App is stopped mid-scan, the next start removes anything left over.
 
+## Diets
+
+Setup has a main diet to pick from a list (general, plant-based, low-carb, weight-loss programs and condition-focused
+styles) and an optional "Other goals or notes" line. A diet is guidance for the AI task, not a rule MealAgent checks, and
+it is not medical advice. Allergies always take precedence over the diet. "Points-based (Weight Watchers style)" does not
+calculate official points; it favours typically low-point foods and shows an estimated calories per serving marked "est.".
+Profiles saved before 0.1.1 keep working: a free-text diet that names a listed diet selects it, any other text moves to
+"Other goals or notes" under Balanced.
+
 ## Allergens
 
 MealAgent compares ingredient names with the allergy list you enter. It does not know what is inside packaged products.

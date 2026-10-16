@@ -2,7 +2,7 @@
 # reference to the public GHCR image (built from the private source repo twimprine/MealAgent by
 # its CI). HA clones this public repo and pulls that image.
 name: MealAgent
-version: "0.1.0"
+version: "0.1.1"
 slug: mealagent
 description: Plans your family's meals from a pantry photo and puts them in your calendar and shopping list.
 image: "ghcr.io/twimprine/mealagent-{arch}"
