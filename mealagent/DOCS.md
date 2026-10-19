@@ -15,6 +15,8 @@ on a to-do list.
 
 Open MealAgent from the sidebar: Setup, then Pantry (photos), then This week, Plan my week.
 
+Every Home Assistant user sees MealAgent in the sidebar. Anyone with an HA login can change its settings and allergy profiles, so only give HA accounts to people you trust with that.
+
 ## What it stores
 
 Your setup, pantry list and a plan per week are JSON files in the App's `/data` folder. Pantry photos are shrunk,
